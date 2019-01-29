@@ -1,0 +1,37 @@
+Our project is building a database system for a hotel company that owns several
+properties.
+We have two types of users for the system:
+  + Staff
+  + Customer
+
++ Customers
+  - Room Search
+    * customers are able to search available hotel rooms by providing location
+      and date information
+    * They can then pick a room from the list to reserve a room
+
++ Hotel Staff
+  - Customer Management
+      * Search Customer
+        / Find customer's information including customer ID, name, membership
+          points and booking information using the phone number
+      * Customer Check-in
+        / Staff can query for VIP customers and give them promotions when
+          when they check-in
+        / The criteria to be a VIP customer is to have stayed in all hotels
+          owned by the company
+      * Customer Information
+        / Staff is able to delete a customer's record from the system.
+
+  - Hotel Service
+      * Shuttle Service Schedule
+        / Print the shuttle bus service request for a particular day and hotel
+
+  - Financial Statement
+      * Dinner Income
+        / Find the best and worst hotels in terms of dinner income in all times
+
+We have made very minor changes to the schema, only add one or two new attribute
+to the entities for easier understanding.
+We have changed the design of functionalities of the two use types to align with
+what has been requested from the demo checklist.

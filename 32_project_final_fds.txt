@@ -1,0 +1,62 @@
+▭ Customer [CID, Name, Ph, Email]
+CID -> Name, Ph, Email
+Customer ID, the primary key, determines the customer's name, phone number and email address.
+
+▭ Member [CID, Points]
+CID -> Points
+Customer ID, the primary and foreign key, determines the member’s points
+
+▭
+GeoInfo [Country, PostCode, City, Prov]
+Country, PostCode -> City, Prov
+Country and postal code determines City and Province
+
+
+Hotel [HID, HName, StNo, StName, Country, PostCode]
+HID -> all other attributes
+Hotel ID determines the hotel name and address
+
+▭
+RoomType [TID, BedSize, BedNum, RmView]
+TID -> BedSize, BedNum, View, RegRate
+The room type ID determine the bed size, number of beds, view of the rooms
+
+RtPlan [HID, TID, RegRt]
+HID TID -> RegRt
+Hotel and Room type determines the price of the room
+
+
+▭◇ Reservation [CofNo, Status, CCNo, CCExp, CCName, CInDate, COutDate]
+CofNo -> all the other attributes.
+Confirmation number determines booking status (active, complete or cancelled),
+credit card number, expiration date and name on file, check-in and check-out
+date.
+
+▭ HotelStay [HSID, Payment, Dinner, Parking, Pet, Wifi, Luggage, AInDate, AOutDate, CofNo]
+HSID -> all other attributes
+Hotel stay ID determines the payment status, dinner service charge, parking
+charge, pet damage deposit, wifi charge, whether the customer has luggage stored
+in the luggage room, actual check-in date and actual check-out date.
+
+
+◇ Makes [CID, HID, TID, CofNo]
+(CID, HID, TID, CofNo) together is the primary key
+Customer makes reservations, the reservation includes the customer ID, hotel ID,
+Room type ID and reservation confirmation number.
+
+
+▭◇◇ Room [HID, RoomNo, TID]
+HID, RoomNo -> TID
+Hotel and room number determines the room type
+
+
+◇ Stays [CID, HSID, HID, RoomNo]
+All four attributes together composes the primary key.
+Customer stays at a hotel room. The stay action includes customer ID, hotel stay
+ID and Hotel ID and room number.
+
+
+▭◇ ShuttleService [SID, Dir, sDateTime, FlightNo, HSID]
+SID -> Dir, Date, Time, FlightNo, HSID
+Service ID, the primary key, determines the direction (pickup or drop-off),
+service date and time, flight number, hotel stay ID
